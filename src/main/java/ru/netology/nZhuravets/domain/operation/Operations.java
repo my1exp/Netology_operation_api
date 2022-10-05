@@ -4,7 +4,6 @@ package ru.netology.nZhuravets.domain.operation;
 import lombok.*;
 import ru.netology.nZhuravets.domain.ConsolePrintable;
 
-import java.time.LocalDateTime;
 
 @Getter
 @Setter

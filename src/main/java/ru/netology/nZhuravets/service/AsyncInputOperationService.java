@@ -1,18 +1,17 @@
 package ru.netology.nZhuravets.service;
 
-import lombok.RequiredArgsConstructor;
 import ru.netology.nZhuravets.domain.operation.Operations;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-@RequiredArgsConstructor
 public class AsyncInputOperationService {
-
     private final Queue<Operations> operations = new LinkedList<>();
     private final StatementService statementService;
 
-
+    public AsyncInputOperationService(StatementService statementService) {
+        this.statementService = statementService;
+    }
 
     public boolean addOperation(Operations operation){
         System.out.println("Operation added for processing " + operations);

@@ -1,42 +1,30 @@
 package ru.netology.nZhuravets;
 
-import ru.netology.nZhuravets.domain.Customer;
-import ru.netology.nZhuravets.domain.operation.Currency;
-import ru.netology.nZhuravets.domain.operation.Operations;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import ru.netology.nZhuravets.configuration.AppConfiguration;
 import ru.netology.nZhuravets.service.AsyncInputOperationService;
-import ru.netology.nZhuravets.service.CustomerService;
 import ru.netology.nZhuravets.service.StatementService;
 
-import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
 
-        CustomerService customerService = new CustomerService();
-        StatementService statementService = new StatementService();
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
 
-        AsyncInputOperationService asyncInputOperationService = new AsyncInputOperationService(statementService);
+        AsyncInputOperationService asyncInputOperationService = context.getBean(AsyncInputOperationService.class);
+        StatementService statementService = context.getBean(StatementService.class);
+
         asyncInputOperationService.startProcessing();
-
         System.out.println(statementService.getOperations());
 
+
+
+//        CustomerService customerService = new CustomerService();
+//        StatementService statementService = new StatementService();
+//
+//        AsyncInputOperationService asyncInputOperationService = new AsyncInputOperationService(statementService);
+
+
     }
-/*
-    public static Currency parseInputCurrency(String input) {
-        Currency var10000;
-        switch (input) {
-            case "RUB":
-                var10000 = Currency.RUB;
-                break;
-            case "USD":
-                var10000 = Currency.USD;
-                break;
-            default:
-                var10000 = null;
-        }
-        return var10000;
-    }
-    }*/
 }
