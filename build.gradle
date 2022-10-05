@@ -1,25 +1,19 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '2.7.4'
+    id 'io.spring.dependency-management' version '1.0.14.RELEASE'
 }
-
-group 'ru.netology'
-version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-        testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-        implementation 'org.projectlombok:lombok:1.18.24'
-        implementation 'org.springframework:spring-context:5.3.23'
-
-        annotationProcessor 'org.projectlombok:lombok:1.18.24'
-        compileOnly 'org.projectlombok:lombok:1.18.24'
-
-        testCompileOnly 'org.projectlombok:lombok:1.18.24'
-        testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 }
 
 test {

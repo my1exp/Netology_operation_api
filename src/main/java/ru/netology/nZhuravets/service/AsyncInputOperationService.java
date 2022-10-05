@@ -1,13 +1,20 @@
 package ru.netology.nZhuravets.service;
 
+import org.springframework.stereotype.Component;
 import ru.netology.nZhuravets.domain.operation.Operations;
 
+import javax.annotation.PostConstruct;
 import java.util.LinkedList;
 import java.util.Queue;
-
+@Component
 public class AsyncInputOperationService {
     private final Queue<Operations> operations = new LinkedList<>();
     private final StatementService statementService;
+
+    @PostConstruct
+    public void init(){
+        this.startProcessing();
+    }
 
     public AsyncInputOperationService(StatementService statementService) {
         this.statementService = statementService;
@@ -42,11 +49,10 @@ public class AsyncInputOperationService {
             else{
                 System.out.println("Processing operation " + operation);
                 processOperation(operation);
-                }
             }
         }
-
-        private void processOperation(Operations operation){
-            statementService.saveOperations(operation);
-        }
+    }
+    private void processOperation(Operations operation){
+        statementService.saveOperations(operation);
+    }
 }
