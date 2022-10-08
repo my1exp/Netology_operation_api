@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="b1a2c948-4324-4a24-a2ea-5305bd9c0165" name="Changes" comment="add @PostMapping" />
+=======
+    <list default="true" id="b1a2c948-4324-4a24-a2ea-5305bd9c0165" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/netology/nZhuravets/CustomerControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Netology_operation_api.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Netology_operation_api.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Netology_operation_api.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Netology_operation_api.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/netology/nZhuravets/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/netology/nZhuravets/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/netology/nZhuravets/controller/dto/CustomersDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/netology/nZhuravets/controller/dto/CustomersDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/netology/nZhuravets/domain/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/netology/nZhuravets/domain/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/netology/nZhuravets/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/netology/nZhuravets/service/CustomerService.java" afterDir="false" />
+    </list>
+>>>>>>> e6a172b81dd5011e2680a5161fdfc33fbb146aa7
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

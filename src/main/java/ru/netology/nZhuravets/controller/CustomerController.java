@@ -1,12 +1,17 @@
 package ru.netology.nZhuravets.controller;
 
 import lombok.RequiredArgsConstructor;
+<<<<<<< HEAD
+=======
+import org.springframework.http.HttpStatus;
+>>>>>>> e6a172b81dd5011e2680a5161fdfc33fbb146aa7
 import org.springframework.web.bind.annotation.*;
 import ru.netology.nZhuravets.controller.dto.CustomersDTO;
 import ru.netology.nZhuravets.controller.dto.GetCustomersResponse;
 import ru.netology.nZhuravets.domain.Customer;
 import ru.netology.nZhuravets.service.CustomerService;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,6 +1,7 @@
 package ru.netology.nZhuravets.domain;
 
 import lombok.*;
+import ru.netology.nZhuravets.service.CustomerService;
 
 @Setter
 @Getter

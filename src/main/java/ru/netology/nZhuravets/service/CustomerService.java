@@ -24,5 +24,9 @@ public class CustomerService {
     public void init(){
         storage.add(new Customer(1, "Nikita"));
         storage.add(new Customer(2,"Oleg"));
+<<<<<<< HEAD
+=======
+
+>>>>>>> e6a172b81dd5011e2680a5161fdfc33fbb146aa7
     }
 }
