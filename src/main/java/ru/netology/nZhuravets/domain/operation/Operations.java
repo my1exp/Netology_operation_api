@@ -7,7 +7,7 @@ import ru.netology.nZhuravets.domain.ConsolePrintable;
 
 @Getter
 @Setter
-
+@AllArgsConstructor
 public class Operations extends BaseOperation implements ConsolePrintable {
     private OperationCreditType operationCreditType;
     private double sum;
