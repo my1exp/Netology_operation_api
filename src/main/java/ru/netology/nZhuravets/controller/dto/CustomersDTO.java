@@ -1,18 +1,10 @@
 package ru.netology.nZhuravets.controller.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@EqualsAndHashCode
+@Data
 public class CustomersDTO {
-    private int id;
-    private String name;
+    private final int id;
+    private final String name;
 
-    public CustomersDTO() {
-    }
 }
