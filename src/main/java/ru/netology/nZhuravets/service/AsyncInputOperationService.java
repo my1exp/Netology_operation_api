@@ -1,24 +1,25 @@
 package ru.netology.nZhuravets.service;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import ru.netology.nZhuravets.configuration.OperationProcessingProperties;
 import ru.netology.nZhuravets.domain.operation.Operations;
 
 import javax.annotation.PostConstruct;
 import java.util.LinkedList;
 import java.util.Queue;
 @Component
+@RequiredArgsConstructor
 public class AsyncInputOperationService {
     private final Queue<Operations> operations = new LinkedList<>();
     private final StatementService statementService;
+    private final OperationProcessingProperties properties;
 
     @PostConstruct
     public void init(){
         this.startProcessing();
     }
 
-    public AsyncInputOperationService(StatementService statementService) {
-        this.statementService = statementService;
-    }
 
     public boolean addOperation(Operations operation){
         System.out.println("Operation added for processing " + operations);
@@ -41,7 +42,7 @@ public class AsyncInputOperationService {
             if (operation == null) {
                 try {
                     System.out.println("No operations");
-                    Thread.sleep(1_000);
+                    Thread.sleep(properties.getTimeout());
                 } catch (InterruptedException e) {
                     System.out.println(e);
                 }
