@@ -1,14 +1,11 @@
 package ru.netology.nZhuravets.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.netology.nZhuravets.controller.dto.CustomersDTO;
 import ru.netology.nZhuravets.controller.dto.GetCustomersResponse;
 import ru.netology.nZhuravets.domain.Customer;
 import ru.netology.nZhuravets.service.CustomerService;
-
-import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +37,7 @@ public class CustomerController {
                 return customersDTO;
             }
         }
-    return null;
+        return null;
     }
 
     @PostMapping("/{customerId}")
@@ -48,4 +45,3 @@ public class CustomerController {
         customerService.addCustomer(customer.getId(), customer.getName());
     }
 }
-
