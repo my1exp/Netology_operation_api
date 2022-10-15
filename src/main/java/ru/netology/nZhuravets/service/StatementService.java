@@ -3,11 +3,12 @@ package ru.netology.nZhuravets.service;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import ru.netology.nZhuravets.domain.operation.Operations;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+
 @Component
 @AllArgsConstructor
 public class StatementService {

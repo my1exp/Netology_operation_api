@@ -3,7 +3,9 @@ package ru.netology.nZhuravets.domain.operation;
 import lombok.*;
 import ru.netology.nZhuravets.domain.ConsolePrintable;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
 
 public class LoanOperation extends Operations implements ConsolePrintable {
     private int loanId;

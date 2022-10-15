@@ -6,6 +6,4 @@ import java.util.List;
 @Data
 public class GetCustomersResponse {
     private final List<CustomersDTO> Customers;
-
-
 }

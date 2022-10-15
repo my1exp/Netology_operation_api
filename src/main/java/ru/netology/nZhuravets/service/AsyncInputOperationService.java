@@ -10,6 +10,8 @@ import javax.annotation.PostConstruct;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import static ru.netology.nZhuravets.domain.operation.OperationCreditType.CREDIT;
+
 
 @Component
 @RequiredArgsConstructor
@@ -30,6 +32,21 @@ public class AsyncInputOperationService {
         operations.add(operation);
     }
 
+    public void getOperations(int operationId){
+        statementService.getOperations();
+    }
+
+    @PostConstruct
+    public void addTestOperation(){
+        Operations operation = new Operations(CREDIT,1000, Currency.RUB, "Shoko", 1);
+        operations.add(operation);
+    }
+
+
+    public void removeOperation(int operationId){
+        operations.remove(operationId);
+    }
+
     public Queue<Operations> getOperations(){
         return operations;
     }
@@ -39,12 +56,7 @@ public class AsyncInputOperationService {
     }
 
     public void startProcessing(){
-        Thread t = new Thread(){
-
-            public void run(){
-                processQueue();
-            }
-        };
+        Thread t = new Thread(() -> processQueue());
         t.start();
     }
 

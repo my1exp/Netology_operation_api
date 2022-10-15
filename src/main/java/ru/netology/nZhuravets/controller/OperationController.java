@@ -1,23 +1,24 @@
 package ru.netology.nZhuravets.controller;
 
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.netology.nZhuravets.controller.dto.GetOperationsResponse;
 import ru.netology.nZhuravets.controller.dto.OperationsDTO;
 import ru.netology.nZhuravets.domain.operation.Operations;
 import ru.netology.nZhuravets.service.AsyncInputOperationService;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
 @RestController
-@RequiredArgsConstructor
 @RequestMapping(path = "/api/operations")
-public class OperationsController {
+public class OperationController {
 
     private final AsyncInputOperationService asyncInputOperationService;
+
+    public OperationController(AsyncInputOperationService asyncInputOperationService){
+        this.asyncInputOperationService = asyncInputOperationService;
+    }
 
 
     @GetMapping
@@ -50,4 +51,10 @@ public class OperationsController {
        asyncInputOperationService.addOperation(operation.getOperationCreditType(),
                operation.getSum(), operation.getCurrency(), operation.getMerchant(), operation.getCustomerId());
    }
+
+    @PostMapping("/{customerId}/remove")
+    public void removeOperation(@RequestBody int operationId) {
+        asyncInputOperationService.removeOperation(operationId);
+    }
+
 }
