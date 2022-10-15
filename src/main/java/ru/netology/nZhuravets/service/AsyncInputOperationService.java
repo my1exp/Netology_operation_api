@@ -1,5 +1,6 @@
 package ru.netology.nZhuravets.service;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import ru.netology.nZhuravets.configuration.OperationProcessingProperties;
@@ -7,14 +8,13 @@ import ru.netology.nZhuravets.domain.operation.Currency;
 import ru.netology.nZhuravets.domain.operation.OperationCreditType;
 import ru.netology.nZhuravets.domain.operation.Operations;
 import javax.annotation.PostConstruct;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 import static ru.netology.nZhuravets.domain.operation.OperationCreditType.CREDIT;
 
 
 @Component
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class AsyncInputOperationService {
     private final Queue<Operations> operations = new LinkedList<>();
     private final StatementService statementService;
@@ -32,19 +32,12 @@ public class AsyncInputOperationService {
         operations.add(operation);
     }
 
-    public void getOperations(int operationId){
+    public void getOperation(int customerId){
         statementService.getOperations();
     }
 
-    @PostConstruct
-    public void addTestOperation(){
-        Operations operation = new Operations(CREDIT,1000, Currency.RUB, "Shoko", 1);
-        operations.add(operation);
-    }
-
-
     public void removeOperation(int operationId){
-        operations.remove(operationId);
+        statementService.removeOperation(operationId);
     }
 
     public Queue<Operations> getOperations(){
@@ -56,7 +49,7 @@ public class AsyncInputOperationService {
     }
 
     public void startProcessing(){
-        Thread t = new Thread(() -> processQueue());
+        Thread t = new Thread(this::processQueue);
         t.start();
     }
 

@@ -24,9 +24,11 @@ public class StatementService {
             operations.add(operation);
         }
     }
+    public void removeOperation(int operationId){
+        storage.remove(operationId);
+    }
 
     public String getOperations(){
         return storage.toString();
-
     }
 }
