@@ -9,7 +9,6 @@ import ru.netology.nZhuravets.domain.operation.Operations;
 import javax.annotation.PostConstruct;
 import java.util.*;
 
-
 @Component
 @AllArgsConstructor
 public class AsyncInputOperationService {
@@ -41,7 +40,7 @@ public class AsyncInputOperationService {
         return operations;
     }
     public boolean addOperation(Operations operation){
-        System.out.println("Operation added for processing " + operations);
+        System.out.println("Operation added for processing " + operation);
         return operations.offer(operation);
     }
 

@@ -7,8 +7,6 @@ import ru.netology.nZhuravets.controller.dto.OperationsDTO;
 import ru.netology.nZhuravets.domain.operation.Currency;
 import ru.netology.nZhuravets.domain.operation.Operations;
 import ru.netology.nZhuravets.service.AsyncInputOperationService;
-import ru.netology.nZhuravets.service.StatementService;
-
 import java.util.Queue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.netology.nZhuravets.domain.operation.OperationCreditType.CREDIT;
@@ -18,7 +16,6 @@ public class OperationControllerTest extends OperationHistoryApiApplicationTest 
 
     @Autowired
     private AsyncInputOperationService asyncInputOperationService;
-
 
     @Test
     public void getInputOperationsTest() {

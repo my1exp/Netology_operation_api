@@ -9,7 +9,6 @@ import ru.netology.nZhuravets.domain.Customer;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-
 class CustomerControllerTest extends OperationHistoryApiApplicationTest {
     @Autowired
     private CustomerController customerController;
