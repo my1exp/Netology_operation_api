@@ -1,7 +1,6 @@
 package ru.netology.nZhuravets.service;
 
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import ru.netology.nZhuravets.configuration.OperationProcessingProperties;
 import ru.netology.nZhuravets.domain.operation.Currency;
@@ -9,8 +8,6 @@ import ru.netology.nZhuravets.domain.operation.OperationCreditType;
 import ru.netology.nZhuravets.domain.operation.Operations;
 import javax.annotation.PostConstruct;
 import java.util.*;
-
-import static ru.netology.nZhuravets.domain.operation.OperationCreditType.CREDIT;
 
 
 @Component
